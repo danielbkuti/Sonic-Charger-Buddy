@@ -1,0 +1,68 @@
+name: SonicBattery
+options:
+  bundleIdPrefix: com.sonicbattery
+  deploymentTarget:
+    iOS: "17.0"
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    TARGETED_DEVICE_FAMILY: "1"
+
+targets:
+  SonicBattery:
+    type: application
+    platform: iOS
+    sources:
+      - SonicBattery
+      - Shared
+      - path: SonicBatteryWidget/Assets.xcassets
+        buildPhase: resources
+    info:
+      path: SonicBattery/Info.plist
+      properties:
+        CFBundleDisplayName: SonicBattery
+        UILaunchScreen: {}
+        NSSupportsLiveActivities: true
+        NSSupportsLiveActivitiesFrequentUpdates: true
+        UIBackgroundModes:
+          - fetch
+        BGTaskSchedulerPermittedIdentifiers:
+          - com.sonicbattery.app.refresh
+        UIAppFonts:
+          - Karma Future.otf
+          - Karma Suture.otf
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.sonicbattery.app
+        INFOPLIST_KEY_UIApplicationSceneManifest_Generation: true
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+    dependencies:
+      - target: SonicBatteryWidgetExtension
+        embed: true
+
+  SonicBatteryWidgetExtension:
+    type: app-extension
+    platform: iOS
+    sources:
+      - SonicBatteryWidget
+      - Shared
+    info:
+      path: SonicBatteryWidget/Info.plist
+      properties:
+        CFBundleDisplayName: SonicBattery Widget
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.widgetkit-extension
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.sonicbattery.app.widget
+        SKIP_INSTALL: true
+
+schemes:
+  SonicBattery:
+    build:
+      targets:
+        SonicBattery: all
+    run:
+      config: Debug
+    archive:
+      config: Release

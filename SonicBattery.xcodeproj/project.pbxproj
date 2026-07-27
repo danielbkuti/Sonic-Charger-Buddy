@@ -1,0 +1,516 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		028C8357AF09ACC44C426B13 /* SonicLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59990B6FFDCB09AB297966D /* SonicLiveActivity.swift */; };
+		0C933E69D23C543F9125776B /* Quotes.json in Resources */ = {isa = PBXBuildFile; fileRef = 63DF63FB07F907F40109F9E7 /* Quotes.json */; };
+		0E20032E9F02137529BC6E6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23D3382E0DE501ACE32A39D6 /* Assets.xcassets */; };
+		0E414FDC8D0F91DED981041A /* SonicCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453724D417FD133015372D1A /* SonicCharacter.swift */; };
+		26B2B5B072A31E48ECCD3654 /* BurstAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C103A5F9E71F92CE846843 /* BurstAnimation.swift */; };
+		31C2F5D9CE8266D6AC5C8878 /* SonicIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F8A08A408E1A8A4086C699 /* SonicIntents.swift */; };
+		43F9F2410A907B4D2095EB33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27D52A7F550C941E559CE40B /* Assets.xcassets */; };
+		52705D1B39B5DA1E6C06DDA2 /* SonicBatteryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB3A07CC87C79F8DEE3A854 /* SonicBatteryApp.swift */; };
+		65C9235BDE508CAE71DB8E8B /* SonicActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDA3AABAB0751968DF25711 /* SonicActivityAttributes.swift */; };
+		67EA7326F5BFDB59C9A90144 /* Quotes.json in Resources */ = {isa = PBXBuildFile; fileRef = 63DF63FB07F907F40109F9E7 /* Quotes.json */; };
+		8A7F6D2508E12896C1229FB3 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8E10ECE0C311CE5B769AC6 /* Quote.swift */; };
+		AA65C407ABF5691F97DA0BD3 /* SonicActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDA3AABAB0751968DF25711 /* SonicActivityAttributes.swift */; };
+		AAC9C4BDC0411CD943A19BB2 /* SonicCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453724D417FD133015372D1A /* SonicCharacter.swift */; };
+		ACFAD216B84FB79FBF31AE2F /* BurstAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C103A5F9E71F92CE846843 /* BurstAnimation.swift */; };
+		AD5FFAC3DAB14301951F23E2 /* SonicBatteryWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E45CF86789E98447B2D715 /* SonicBatteryWidgetBundle.swift */; };
+		AF41F929AAC807E913D56AAE /* SonicActivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C1C94E3193E0004B3E52A2 /* SonicActivityController.swift */; };
+		B0F8AEF3374E6878CB70DD71 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265A0614D59E2D1331597A69 /* ContentView.swift */; };
+		BC044B5C4BB5137826CF8410 /* SonicBatteryWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 8BB970723FA384BAEA96A33B /* SonicBatteryWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		BEC6CD079CAEB6BDF10C672A /* Karma Suture.otf in Resources */ = {isa = PBXBuildFile; fileRef = AD7583A71F4DA3206719CDD5 /* Karma Suture.otf */; };
+		CA041EF35508021932849DEF /* Karma Future.otf in Resources */ = {isa = PBXBuildFile; fileRef = D94B1A30C6D259B370B1FFAF /* Karma Future.otf */; };
+		CD70789CD35BBB0B9BBE407F /* CharacterPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A98AD4FA12AA3C178EA8AA9 /* CharacterPickerView.swift */; };
+		DCF0334493CD3371F50B6187 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27D52A7F550C941E559CE40B /* Assets.xcassets */; };
+		E815E665FD7EF4217EDFB320 /* BackgroundRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DBFA39926C8CBE83B9646F /* BackgroundRefresh.swift */; };
+		ED6B947EEC860B095933BD95 /* BatteryActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CB8F0B50772353976E7D5F /* BatteryActivityManager.swift */; };
+		F15C6AA0B09631A9CCB7DBB1 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8E10ECE0C311CE5B769AC6 /* Quote.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1FF441ABBACB5956E17E5989 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2F97A205E0F270EF35D5E032 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9EAD7AC60BDBDA28968583E;
+			remoteInfo = SonicBatteryWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		69228AAC840EE793B8B0A67F /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				BC044B5C4BB5137826CF8410 /* SonicBatteryWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		06C103A5F9E71F92CE846843 /* BurstAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BurstAnimation.swift; sourceTree = "<group>"; };
+		23D3382E0DE501ACE32A39D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		265A0614D59E2D1331597A69 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		27D52A7F550C941E559CE40B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		36DBFA39926C8CBE83B9646F /* BackgroundRefresh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundRefresh.swift; sourceTree = "<group>"; };
+		453724D417FD133015372D1A /* SonicCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SonicCharacter.swift; sourceTree = "<group>"; };
+		5A98AD4FA12AA3C178EA8AA9 /* CharacterPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterPickerView.swift; sourceTree = "<group>"; };
+		60F8A08A408E1A8A4086C699 /* SonicIntents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SonicIntents.swift; sourceTree = "<group>"; };
+		63DF63FB07F907F40109F9E7 /* Quotes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Quotes.json; sourceTree = "<group>"; };
+		76E45CF86789E98447B2D715 /* SonicBatteryWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SonicBatteryWidgetBundle.swift; sourceTree = "<group>"; };
+		79959C10255F4A915C00E592 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8BB970723FA384BAEA96A33B /* SonicBatteryWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SonicBatteryWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		9442F60A0C22DB51506C2A65 /* SonicBattery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SonicBattery.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CDA3AABAB0751968DF25711 /* SonicActivityAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SonicActivityAttributes.swift; sourceTree = "<group>"; };
+		A5C1C94E3193E0004B3E52A2 /* SonicActivityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SonicActivityController.swift; sourceTree = "<group>"; };
+		AD7583A71F4DA3206719CDD5 /* Karma Suture.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karma Suture.otf"; sourceTree = "<group>"; };
+		AD8E10ECE0C311CE5B769AC6 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
+		B9CB8F0B50772353976E7D5F /* BatteryActivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryActivityManager.swift; sourceTree = "<group>"; };
+		D0B3B20C9D5E0FF6E28B8482 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D94B1A30C6D259B370B1FFAF /* Karma Future.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karma Future.otf"; sourceTree = "<group>"; };
+		DEB3A07CC87C79F8DEE3A854 /* SonicBatteryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SonicBatteryApp.swift; sourceTree = "<group>"; };
+		F59990B6FFDCB09AB297966D /* SonicLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SonicLiveActivity.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		1D91DAC95B10D5874F8993D1 /* SonicBattery */ = {
+			isa = PBXGroup;
+			children = (
+				23D3382E0DE501ACE32A39D6 /* Assets.xcassets */,
+				36DBFA39926C8CBE83B9646F /* BackgroundRefresh.swift */,
+				B9CB8F0B50772353976E7D5F /* BatteryActivityManager.swift */,
+				5A98AD4FA12AA3C178EA8AA9 /* CharacterPickerView.swift */,
+				265A0614D59E2D1331597A69 /* ContentView.swift */,
+				79959C10255F4A915C00E592 /* Info.plist */,
+				A5C1C94E3193E0004B3E52A2 /* SonicActivityController.swift */,
+				DEB3A07CC87C79F8DEE3A854 /* SonicBatteryApp.swift */,
+				60F8A08A408E1A8A4086C699 /* SonicIntents.swift */,
+				F5FA11369B65E8CACCBD6E19 /* Fonts */,
+			);
+			path = SonicBattery;
+			sourceTree = "<group>";
+		};
+		632BE0F263B8DCF5BA5EF2B4 = {
+			isa = PBXGroup;
+			children = (
+				8E1D2F8279E6E84280ACB1A6 /* Shared */,
+				1D91DAC95B10D5874F8993D1 /* SonicBattery */,
+				9C21CB8C4A526BB8372FB138 /* SonicBatteryWidget */,
+				A640C15F814F5ADB444272F1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8E1D2F8279E6E84280ACB1A6 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				06C103A5F9E71F92CE846843 /* BurstAnimation.swift */,
+				AD8E10ECE0C311CE5B769AC6 /* Quote.swift */,
+				63DF63FB07F907F40109F9E7 /* Quotes.json */,
+				9CDA3AABAB0751968DF25711 /* SonicActivityAttributes.swift */,
+				453724D417FD133015372D1A /* SonicCharacter.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		9C21CB8C4A526BB8372FB138 /* SonicBatteryWidget */ = {
+			isa = PBXGroup;
+			children = (
+				27D52A7F550C941E559CE40B /* Assets.xcassets */,
+				D0B3B20C9D5E0FF6E28B8482 /* Info.plist */,
+				76E45CF86789E98447B2D715 /* SonicBatteryWidgetBundle.swift */,
+				F59990B6FFDCB09AB297966D /* SonicLiveActivity.swift */,
+			);
+			path = SonicBatteryWidget;
+			sourceTree = "<group>";
+		};
+		A640C15F814F5ADB444272F1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9442F60A0C22DB51506C2A65 /* SonicBattery.app */,
+				8BB970723FA384BAEA96A33B /* SonicBatteryWidgetExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F5FA11369B65E8CACCBD6E19 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				D94B1A30C6D259B370B1FFAF /* Karma Future.otf */,
+				AD7583A71F4DA3206719CDD5 /* Karma Suture.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		709929D396442E3C2AF24198 /* SonicBattery */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5E796700EF141D0DCEF8A68A /* Build configuration list for PBXNativeTarget "SonicBattery" */;
+			buildPhases = (
+				3283D8D27E6FA81D79ECB6EB /* Sources */,
+				7F5F710C6945FC7B198DDAEA /* Resources */,
+				69228AAC840EE793B8B0A67F /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6ABDD5DCB75B83E3349B562E /* PBXTargetDependency */,
+			);
+			name = SonicBattery;
+			packageProductDependencies = (
+			);
+			productName = SonicBattery;
+			productReference = 9442F60A0C22DB51506C2A65 /* SonicBattery.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C9EAD7AC60BDBDA28968583E /* SonicBatteryWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6F50BAB1ABE0D1B437E3ECDE /* Build configuration list for PBXNativeTarget "SonicBatteryWidgetExtension" */;
+			buildPhases = (
+				4B8AA0F7305E081295CD7B13 /* Sources */,
+				97A76D8C8E2AB15B0A73E4F4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SonicBatteryWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = SonicBatteryWidgetExtension;
+			productReference = 8BB970723FA384BAEA96A33B /* SonicBatteryWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2F97A205E0F270EF35D5E032 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+			};
+			buildConfigurationList = 916F56491673740C814518DD /* Build configuration list for PBXProject "SonicBattery" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 632BE0F263B8DCF5BA5EF2B4;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = A640C15F814F5ADB444272F1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				709929D396442E3C2AF24198 /* SonicBattery */,
+				C9EAD7AC60BDBDA28968583E /* SonicBatteryWidgetExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7F5F710C6945FC7B198DDAEA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E20032E9F02137529BC6E6D /* Assets.xcassets in Resources */,
+				DCF0334493CD3371F50B6187 /* Assets.xcassets in Resources */,
+				CA041EF35508021932849DEF /* Karma Future.otf in Resources */,
+				BEC6CD079CAEB6BDF10C672A /* Karma Suture.otf in Resources */,
+				67EA7326F5BFDB59C9A90144 /* Quotes.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		97A76D8C8E2AB15B0A73E4F4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43F9F2410A907B4D2095EB33 /* Assets.xcassets in Resources */,
+				0C933E69D23C543F9125776B /* Quotes.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3283D8D27E6FA81D79ECB6EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E815E665FD7EF4217EDFB320 /* BackgroundRefresh.swift in Sources */,
+				ED6B947EEC860B095933BD95 /* BatteryActivityManager.swift in Sources */,
+				ACFAD216B84FB79FBF31AE2F /* BurstAnimation.swift in Sources */,
+				CD70789CD35BBB0B9BBE407F /* CharacterPickerView.swift in Sources */,
+				B0F8AEF3374E6878CB70DD71 /* ContentView.swift in Sources */,
+				F15C6AA0B09631A9CCB7DBB1 /* Quote.swift in Sources */,
+				AA65C407ABF5691F97DA0BD3 /* SonicActivityAttributes.swift in Sources */,
+				AF41F929AAC807E913D56AAE /* SonicActivityController.swift in Sources */,
+				52705D1B39B5DA1E6C06DDA2 /* SonicBatteryApp.swift in Sources */,
+				AAC9C4BDC0411CD943A19BB2 /* SonicCharacter.swift in Sources */,
+				31C2F5D9CE8266D6AC5C8878 /* SonicIntents.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4B8AA0F7305E081295CD7B13 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26B2B5B072A31E48ECCD3654 /* BurstAnimation.swift in Sources */,
+				8A7F6D2508E12896C1229FB3 /* Quote.swift in Sources */,
+				65C9235BDE508CAE71DB8E8B /* SonicActivityAttributes.swift in Sources */,
+				AD5FFAC3DAB14301951F23E2 /* SonicBatteryWidgetBundle.swift in Sources */,
+				0E414FDC8D0F91DED981041A /* SonicCharacter.swift in Sources */,
+				028C8357AF09ACC44C426B13 /* SonicLiveActivity.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6ABDD5DCB75B83E3349B562E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9EAD7AC60BDBDA28968583E /* SonicBatteryWidgetExtension */;
+			targetProxy = 1FF441ABBACB5956E17E5989 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		03759061E9276E6416894DB1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 6L6TL68KJX;
+				INFOPLIST_FILE = SonicBattery/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sonicbattery.app;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		57250FCAD2670BF55AE7B0E6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 6L6TL68KJX;
+				INFOPLIST_FILE = SonicBatteryWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sonicbattery.app.widget;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6ADA93D7E9649FE58CE20261 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 6L6TL68KJX;
+				INFOPLIST_FILE = SonicBatteryWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sonicbattery.app.widget;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BA4A5BD4066E45348069DBC0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 6L6TL68KJX;
+				INFOPLIST_FILE = SonicBattery/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sonicbattery.app;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DEA77F9EE5691F76C81AB797 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		FA5DA5D86F32EFA8E288B856 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5E796700EF141D0DCEF8A68A /* Build configuration list for PBXNativeTarget "SonicBattery" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA4A5BD4066E45348069DBC0 /* Debug */,
+				03759061E9276E6416894DB1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		6F50BAB1ABE0D1B437E3ECDE /* Build configuration list for PBXNativeTarget "SonicBatteryWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				57250FCAD2670BF55AE7B0E6 /* Debug */,
+				6ADA93D7E9649FE58CE20261 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		916F56491673740C814518DD /* Build configuration list for PBXProject "SonicBattery" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DEA77F9EE5691F76C81AB797 /* Debug */,
+				FA5DA5D86F32EFA8E288B856 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2F97A205E0F270EF35D5E032 /* Project object */;
+}
