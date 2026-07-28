@@ -58,7 +58,4 @@ project.yml             XcodeGen spec — source of truth for the Xcode project
 
 ## Adding the demo video
 
-GitHub renders video files dropped directly into a README as an inline player, but only if uploaded through GitHub's web UI (drag-and-drop while editing the README there) — a video committed via `git add`/`git push` will just show as a download link, not an inline player. Two options:
-
-- **Inline player**: edit this README on github.com after pushing, drag your video file into the editor, and it'll insert a working `https://github.com/user-attachments/...` link automatically.
-- **Inline GIF** (works via a normal commit): convert the video to a GIF and reference it with standard Markdown image syntax, e.g. `![demo](demo.gif)`.
+Will ADD VIDEO SOON
