@@ -168,7 +168,7 @@ struct CharacterPickerView: View {
     private func playLocalPreview(_ animation: BurstAnimation) {
         previewTask?.cancel()
         previewTask = Task { @MainActor in
-            for step in 0..<animation.frameCount {
+            for step in 0..<animation.frameCount(for: previewedCharacter) {
                 guard !Task.isCancelled else { return }
                 previewAnimation = animation
                 previewFrame = step

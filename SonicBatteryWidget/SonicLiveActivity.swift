@@ -56,7 +56,7 @@ struct SonicLiveActivity: Widget {
                 sonicSprite(for: context.state)
                     .frame(width: 24, height: 24)
             } compactTrailing: {
-                Image("ChaosEmerald")
+                Image(context.state.character.chaosEmeraldImageName)
                     .resizable()
                     .interpolation(.none)
                     .scaledToFit()

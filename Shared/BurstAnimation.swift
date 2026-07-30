@@ -27,11 +27,37 @@ enum BurstAnimation: String, Codable, Hashable {
         }
     }
 
-    var frameCount: Int {
+    // Frame counts are per-character, not just per-animation: each character's
+    // sprite set was drawn with its own number of frames (e.g. Sonic's Rolling
+    // is 6 frames, Shadow's is 4). A character not yet listed here is still on
+    // Sonic's placeholder frames (see SonicCharacter doc comment), so it keeps
+    // Sonic's count until real art replaces those placeholder imagesets.
+    func frameCount(for character: SonicCharacter) -> Int {
         switch self {
-        case .rolling: return 6
-        case .batteryDropped: return 19
-        case .highBattery: return 15
+        case .rolling:
+            switch character {
+            case .sonic: return 6
+            case .silver: return 10
+            case .shadow, .knuckles, .tails, .espio: return 4
+            }
+        case .batteryDropped:
+            switch character {
+            case .sonic: return 19
+            case .silver: return 11
+            case .shadow: return 10
+            case .knuckles: return 6
+            case .tails: return 8
+            case .espio: return 11
+            }
+        case .highBattery:
+            switch character {
+            case .sonic: return 15
+            case .silver: return 11
+            case .shadow: return 16
+            case .tails: return 10
+            case .knuckles: return 10
+            case .espio: return 7
+            }
         }
     }
 
@@ -45,7 +71,7 @@ enum BurstAnimation: String, Codable, Hashable {
     }
 
     func imageName(forFrame frame: Int, character: SonicCharacter) -> String {
-        let base = "\(imagePrefix)\(frame % frameCount)"
+        let base = "\(imagePrefix)\(frame % frameCount(for: character))"
         return character.assetPrefix.isEmpty ? base : "\(character.assetPrefix)_\(base)"
     }
 }

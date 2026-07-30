@@ -46,6 +46,13 @@ enum SonicCharacter: String, Codable, Hashable, CaseIterable {
         return assetPrefix.isEmpty ? base : "\(assetPrefix)_\(base)"
     }
 
+    // The Dynamic Island's compactTrailing slot shows this character's Chaos
+    // Emerald (each character has its own color) instead of the battery
+    // percentage iOS shows there by default.
+    var chaosEmeraldImageName: String {
+        assetPrefix.isEmpty ? "ChaosEmerald" : "\(assetPrefix)_ChaosEmerald"
+    }
+
     // Which tag in Quotes.json this character's quotes come from — matched
     // against a Quote's `tags` array in QuoteLibrary.quotes(forTag:).
     // TODO: only .sonic's tag ("cheerful") is real — the rest are placeholders

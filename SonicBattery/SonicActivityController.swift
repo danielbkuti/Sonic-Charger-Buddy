@@ -323,7 +323,7 @@ enum SonicActivityController {
 
         await runOwned {
             guard let activity = Activity<SonicActivityAttributes>.activities.first else { return }
-            for step in 0..<animation.frameCount {
+            for step in 0..<animation.frameCount(for: resolvedCharacter) {
                 guard !Task.isCancelled else { return }
                 await push(activity: activity, animation: animation, frame: step, character: resolvedCharacter, quote: resolvedQuote)
                 guard !Task.isCancelled else { return }
@@ -357,7 +357,7 @@ enum SonicActivityController {
             var frame = 0
             if isCharging && level < BurstAnimation.highBatteryThreshold {
                 let defaults = UserDefaults.standard
-                frame = (defaults.integer(forKey: DefaultsKey.rollingFrame) + 1) % BurstAnimation.rolling.frameCount
+                frame = (defaults.integer(forKey: DefaultsKey.rollingFrame) + 1) % BurstAnimation.rolling.frameCount(for: selectedCharacter)
                 defaults.set(frame, forKey: DefaultsKey.rollingFrame)
             }
             guard !Task.isCancelled else { return }
