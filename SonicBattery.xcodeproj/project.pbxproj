@@ -13,6 +13,7 @@
 		0E414FDC8D0F91DED981041A /* SonicCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453724D417FD133015372D1A /* SonicCharacter.swift */; };
 		26B2B5B072A31E48ECCD3654 /* BurstAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C103A5F9E71F92CE846843 /* BurstAnimation.swift */; };
 		31C2F5D9CE8266D6AC5C8878 /* SonicIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F8A08A408E1A8A4086C699 /* SonicIntents.swift */; };
+		31FD046D22B805AE2D1E08A6 /* TestStatesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50881EF169688B418F4D31B9 /* TestStatesView.swift */; };
 		43F9F2410A907B4D2095EB33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27D52A7F550C941E559CE40B /* Assets.xcassets */; };
 		52705D1B39B5DA1E6C06DDA2 /* SonicBatteryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB3A07CC87C79F8DEE3A854 /* SonicBatteryApp.swift */; };
 		65C9235BDE508CAE71DB8E8B /* SonicActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDA3AABAB0751968DF25711 /* SonicActivityAttributes.swift */; };
@@ -65,6 +66,7 @@
 		27D52A7F550C941E559CE40B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		36DBFA39926C8CBE83B9646F /* BackgroundRefresh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundRefresh.swift; sourceTree = "<group>"; };
 		453724D417FD133015372D1A /* SonicCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SonicCharacter.swift; sourceTree = "<group>"; };
+		50881EF169688B418F4D31B9 /* TestStatesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestStatesView.swift; sourceTree = "<group>"; };
 		5A98AD4FA12AA3C178EA8AA9 /* CharacterPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterPickerView.swift; sourceTree = "<group>"; };
 		60F8A08A408E1A8A4086C699 /* SonicIntents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SonicIntents.swift; sourceTree = "<group>"; };
 		63DF63FB07F907F40109F9E7 /* Quotes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Quotes.json; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				A5C1C94E3193E0004B3E52A2 /* SonicActivityController.swift */,
 				DEB3A07CC87C79F8DEE3A854 /* SonicBatteryApp.swift */,
 				60F8A08A408E1A8A4086C699 /* SonicIntents.swift */,
+				50881EF169688B418F4D31B9 /* TestStatesView.swift */,
 				F5FA11369B65E8CACCBD6E19 /* Fonts */,
 			);
 			path = SonicBattery;
@@ -262,6 +265,7 @@
 				52705D1B39B5DA1E6C06DDA2 /* SonicBatteryApp.swift in Sources */,
 				AAC9C4BDC0411CD943A19BB2 /* SonicCharacter.swift in Sources */,
 				31C2F5D9CE8266D6AC5C8878 /* SonicIntents.swift in Sources */,
+				31FD046D22B805AE2D1E08A6 /* TestStatesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

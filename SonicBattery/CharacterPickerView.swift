@@ -2,9 +2,8 @@ import SwiftUI
 
 // Swipeable character picker. Swiping only changes what's PREVIEWED (used to
 // browse states and quote styles) — it never touches the real
-// selectedCharacter until you tap "Select". State buttons at the bottom
-// animate the previewed card's own sprite locally, in-app — no Live Activity
-// involved, so this works even without one running.
+// selectedCharacter until you tap "Select". State testing lives on
+// TestStatesView (reached via the 🧪 icon), not on this screen.
 struct CharacterPickerView: View {
     @EnvironmentObject var batteryManager: BatteryActivityManager
 
@@ -17,11 +16,6 @@ struct CharacterPickerView: View {
     // no card shows as "active" until the user taps Select.
     @State private var activeCharacter: SonicCharacter? = SonicActivityController.selectedCharacterIfSet
 
-    // Local, in-app animation playback — entirely separate from ActivityKit.
-    @State private var previewAnimation: BurstAnimation?
-    @State private var previewFrame: Int = 0
-    @State private var previewTask: Task<Void, Never>?
-
     @State private var quoteStyleSelection: String = SonicActivityController.defaultQuoteStyleValue
     @State private var randomFrequencySelection: SonicActivityController.QuoteShuffleFrequency = .daily
 
@@ -31,6 +25,7 @@ struct CharacterPickerView: View {
         VStack(spacing: 16) {
             Text("Choose Your Character")
                 .font(.custom("KarmaFuture-Regular", size: 22))
+                .foregroundStyle(previewedCharacter.themeTextColor)
 
             GeometryReader { geometry in
                 ScrollView(.horizontal, showsIndicators: false) {
@@ -55,76 +50,99 @@ struct CharacterPickerView: View {
 
             Text(previewedCharacter.displayName)
                 .font(.custom("KarmaSuture-Regular", size: 18))
+                .foregroundStyle(previewedCharacter.themeTextColor)
 
-            if previewedCharacter == activeCharacter {
-                Button("Stop \(previewedCharacter.displayName)") {
-                    stopActiveCharacter()
+            HStack(spacing: 24) {
+                if previewedCharacter == activeCharacter {
+                    Button("Stop \(previewedCharacter.displayName)") {
+                        stopActiveCharacter()
+                    }
+                    .buttonStyle(.bordered)
+                    .tint(.red)
+                } else {
+                    Button("Select \(previewedCharacter.displayName)") {
+                        selectPreviewedCharacter()
+                    }
+                    .buttonStyle(.borderedProminent)
                 }
-                .buttonStyle(.bordered)
-                .tint(.red)
-            } else {
-                Button("Select \(previewedCharacter.displayName)") {
-                    selectPreviewedCharacter()
+
+                quoteStyleMenu
+
+                // Takes you to TestStatesView for the currently previewed character.
+                NavigationLink(value: previewedCharacter) {
+                    Image("SonicIcon")
+                        .resizable()
+                        .renderingMode(.template)
+                        .scaledToFit()
+                        .frame(width: 28, height: 28)
+                        .foregroundStyle(previewedCharacter.themeTextColor)
                 }
-                .buttonStyle(.borderedProminent)
             }
+            .padding(.top, 16) // moves the whole button bar down by one extra spacing unit
 
-            quoteStylePicker
-
-            Divider()
-            Text("Test \(previewedCharacter.displayName)'s states")
-                .font(.headline)
-            Text("Plays right here in the app — no need to check the Island.")
-                .font(.caption)
-                .foregroundStyle(.secondary)
-                .multilineTextAlignment(.center)
-
-            HStack {
-                Button("Rolling") { playLocalPreview(.rolling) }
-                Button("Battery Drop") { playLocalPreview(.batteryDropped) }
-                Button("90% Transform") { playLocalPreview(.highBattery) }
+            if quoteStyleSelection == SonicActivityController.randomQuoteStyleValue {
+                frequencyPicker
             }
-            .buttonStyle(.bordered)
         }
+        .padding()
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(
+            previewedCharacter.themeGradient
+                .ignoresSafeArea()
+        )
+        .animation(.easeInOut(duration: 0.3), value: previewedCharacter)
         .onAppear {
             scrollPosition = activeCharacter ?? .sonic
             syncQuoteStyleState()
         }
         .onChange(of: scrollPosition) { _, _ in
-            previewTask?.cancel()
-            previewAnimation = nil
             syncQuoteStyleState()
         }
     }
 
-    private var quoteStylePicker: some View {
-        VStack(spacing: 8) {
-            Picker("Quote Style", selection: $quoteStyleSelection) {
-                Text("Default Quotes").tag(SonicActivityController.defaultQuoteStyleValue)
-                ForEach(otherCharacters, id: \.self) { other in
-                    Text("\(other.displayName) Quotes").tag(other.quoteTag)
-                }
-                Text("Random").tag(SonicActivityController.randomQuoteStyleValue)
+    // A Picker with .menu style always shows the *selected option's* text as
+    // its trigger, which would override a fixed icon — Menu's label is fully
+    // custom regardless of the current selection, so it's used here instead.
+    private var quoteStyleMenu: some View {
+        Menu {
+            Button("Default Quotes") {
+                setQuoteStyle(SonicActivityController.defaultQuoteStyleValue)
             }
-            .pickerStyle(.menu)
-            .onChange(of: quoteStyleSelection) { _, newValue in
-                SonicActivityController.setQuoteStyle(newValue, for: previewedCharacter)
-                if previewedCharacter == activeCharacter {
-                    Task { await SonicActivityController.pushRestingUpdate() }
+            ForEach(otherCharacters, id: \.self) { other in
+                Button("\(other.displayName) Quotes") {
+                    setQuoteStyle(other.quoteTag)
                 }
             }
+            Button("Random") {
+                setQuoteStyle(SonicActivityController.randomQuoteStyleValue)
+            }
+        } label: {
+            Image("ChatIcon")
+                .resizable()
+                .renderingMode(.template)
+                .scaledToFit()
+                .frame(width: 28, height: 28)
+                .foregroundStyle(previewedCharacter.themeTextColor)
+        }
+    }
 
-            if quoteStyleSelection == SonicActivityController.randomQuoteStyleValue {
-                Picker("Shuffle Frequency", selection: $randomFrequencySelection) {
-                    ForEach(SonicActivityController.QuoteShuffleFrequency.allCases, id: \.self) { frequency in
-                        Text(frequency.rawValue.capitalized).tag(frequency)
-                    }
-                }
-                .pickerStyle(.segmented)
-                .onChange(of: randomFrequencySelection) { _, newValue in
-                    SonicActivityController.setRandomQuoteFrequency(newValue, for: previewedCharacter)
-                }
+    private func setQuoteStyle(_ value: String) {
+        quoteStyleSelection = value
+        SonicActivityController.setQuoteStyle(value, for: previewedCharacter)
+        if previewedCharacter == activeCharacter {
+            Task { await SonicActivityController.pushRestingUpdate() }
+        }
+    }
+
+    private var frequencyPicker: some View {
+        Picker("Shuffle Frequency", selection: $randomFrequencySelection) {
+            ForEach(SonicActivityController.QuoteShuffleFrequency.allCases, id: \.self) { frequency in
+                Text(frequency.rawValue.capitalized).tag(frequency)
             }
+        }
+        .pickerStyle(.segmented)
+        .onChange(of: randomFrequencySelection) { _, newValue in
+            SonicActivityController.setRandomQuoteFrequency(newValue, for: previewedCharacter)
         }
     }
 
@@ -163,37 +181,14 @@ struct CharacterPickerView: View {
         activeCharacter = nil
     }
 
-    /// Cycles the previewed card's own image through an animation's frames
-    /// locally — no ActivityKit, no network, just SwiftUI state updates.
-    private func playLocalPreview(_ animation: BurstAnimation) {
-        previewTask?.cancel()
-        previewTask = Task { @MainActor in
-            for step in 0..<animation.frameCount(for: previewedCharacter) {
-                guard !Task.isCancelled else { return }
-                previewAnimation = animation
-                previewFrame = step
-                try? await Task.sleep(for: .seconds(animation.frameInterval))
-            }
-            guard !Task.isCancelled else { return }
-            previewAnimation = nil
-        }
-    }
-
     private func characterCard(_ character: SonicCharacter) -> some View {
-        Image(cardImageName(for: character))
+        Image(character.idleImageName(highBattery: false))
             .resizable()
             .interpolation(.none)
             .scaledToFit()
             .frame(width: 80, height: 80)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .contentTransition(.opacity)
-    }
-
-    private func cardImageName(for character: SonicCharacter) -> String {
-        if character == previewedCharacter, let previewAnimation {
-            return previewAnimation.imageName(forFrame: previewFrame, character: character)
-        }
-        return character.idleImageName(highBattery: false)
     }
 }
 
