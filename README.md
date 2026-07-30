@@ -4,11 +4,30 @@ An iOS app that shows an animated Sonic-the-Hedgehog-style sprite in the Dynamic
 
 <!-- Demo video goes here — see "Adding the demo video" below -->
 
+## Screenshots
+
+### Character picker — all six characters
+
+| Sonic | Shadow | Silver |
+|---|---|---|
+| ![Sonic](screenshots/picker-sonic.png) | ![Shadow](screenshots/picker-shadow.png) | ![Silver](screenshots/picker-silver.png) |
+
+| Knuckles | Tails | Espio |
+|---|---|---|
+| ![Knuckles](screenshots/picker-knuckles.png) | ![Tails](screenshots/picker-tails.png) | ![Espio](screenshots/picker-espio.png) |
+
+### Live Activity (Sonic)
+
+| Dynamic Island | Lock Screen quote |
+|---|---|
+| ![Dynamic Island](screenshots/dynamic-island-sonic.png) | ![Lock screen](screenshots/lockscreen-sonic-quote.png) |
+
 ## Features
 
-- **Live Activity / Dynamic Island** sprite that reacts to real battery events: charger connected (persistent "Rolling" animation while charging < 90%), charger disconnected, battery dropped 10%, battery crossed 90% while charging (one-time transformation).
-- **Character picker** — a swipeable carousel to browse and select from multiple characters (Sonic, Shadow, Silver, Knuckles, Tails, Espio). Swiping only previews a character; nothing is live until you tap Select.
-- **In-app animation preview** — test any character's Rolling / Battery Drop / 90% Transform animation right in the app, no need to check the Island.
+- **Live Activity / Dynamic Island** sprite that reacts to real battery events: charger connected (persistent "Rolling" animation while charging < 90%), charger disconnected, battery dropped 10%, battery crossed 90% while charging (one-time transformation). The Dynamic Island's corner also shows a Chaos Emerald in that character's own color instead of the default battery percentage.
+- **Six fully-illustrated characters** — Sonic, Shadow, Silver, Knuckles, Tails, and Espio each have their own complete sprite set (idle, rolling, battery-drop reaction, 90% transformation), not placeholder art.
+- **Character picker** — a swipeable carousel to browse and select from all six characters. Swiping only previews a character; nothing is live until you tap Select. The background gradient, text colors, and icons all re-theme to match whichever character is currently previewed.
+- **Dedicated state-testing screen** — tap the icon next to Select/Stop to open a full page for previewing any character's Rolling / Battery Drop / 90% Transform animation, no need to check the Island.
 - **Quote system** — a `Quotes.json` file of tagged quotes; each character pulls from its own tag by default, or you can override it per-character to borrow another character's quotes or go fully random, with an hourly/daily reshuffle option for random mode.
 - **Daily character rotation** — an optional toggle (top-right icon) that randomly switches the active character once a day.
 - **Shortcuts integration** — an App Intent (`RefreshSonicActivityIntent`) lets a Shortcuts Personal Automation ("When Charger Connected/Disconnected") silently launch or refresh the Live Activity in the background, without ever opening the app UI.
@@ -17,7 +36,7 @@ An iOS app that shows an animated Sonic-the-Hedgehog-style sprite in the Dynamic
 ## Requirements
 
 - Xcode 16+ (uses Swift 5, iOS 17 deployment target)
-- A physical iPhone with a Dynamic Island (iPhone 14 Pro or later) — Live Activities/Dynamic Island don't reliably preview in the Simulator
+- A physical iPhone with a Dynamic Island (iPhone 14 Pro or later) recommended for full testing. A recent Simulator can show the resting Live Activity state reasonably well (see screenshots above), but there's no way to simulate real battery events in Simulator, so burst animations (Rolling, Battery Drop, 90% Transform) still need a real device
 - [XcodeGen](https://github.com/yonaskolb/XcodeGen) if you ever change `project.yml` and need to regenerate `SonicBattery.xcodeproj` (`brew install xcodegen`)
 
 ## Getting started
@@ -39,7 +58,7 @@ For the Island to react to charger events reliably even when the app hasn't been
 
 ## Adding new characters / sprites
 
-Sprite naming follows a convention in `Shared/BurstAnimation.swift` and `Shared/SonicCharacter.swift`: each character has an `assetPrefix`, and sprite sheets are named `<assetPrefix>_<baseName><frame>` (e.g. `Shadow_RollingF0`). Currently only Sonic has real art — every other character reuses Sonic's sprites as a placeholder under the correct names, so swapping in real art is just replacing the PNGs in `SonicBatteryWidget/Assets.xcassets` with matching names, no code changes needed.
+Sprite naming follows a convention in `Shared/BurstAnimation.swift` and `Shared/SonicCharacter.swift`: each character has an `assetPrefix`, and sprite sheets are named `<assetPrefix>_<baseName><frame>` (e.g. `Shadow_RollingF0`). Frame counts are per-character (`BurstAnimation.frameCount(for:)`) since each character's art was drawn with its own number of frames — there's no requirement that a new character match Sonic's counts. Each character also has a `themeGradient` and `themeTextColor` in `SonicCharacter.swift` driving the picker screen's background and text colors, and a Chaos Emerald color (`chaosEmeraldImageName`) for its Dynamic Island corner icon.
 
 ## Known limitations (iOS platform constraints, not bugs)
 
